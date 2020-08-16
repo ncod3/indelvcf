@@ -31,7 +31,7 @@ $ pip uninstall indelvcf
 ## Getting Started
 
 ~~~
-$ indelvcf -c ini_yam_for_exam_small5.ini -t 10
+$ indelvcf -c ini_indelvcf_yam_small5.ini -t 10
 ~~~
 
 ## Usage
