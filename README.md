@@ -17,10 +17,15 @@ sbava
 ## Installation
 
 ~~~
-if you have not yet made vprimer environment on conda, you can make it.
+You can use vprimer enviromment on conda.
+If you have not yet made vprimer environment on conda, you can make it.
 $ conda create -n run_vprimer python=3.7
 $ source activate run_vprimer
-(run_vprimer) pip install git+https://github.com/ncod3/vprimer
+$ pip install git+https://github.com/ncod3/indelvcf
+
+If you want to uninstall indelvcf, 
+$ pip uninstall indelvcf
+
 ~~~
 
 ## Getting Started
