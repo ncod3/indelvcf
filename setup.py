@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.1",
     author="satoshi-natsume",
     author_email="s-natsume@ibrc.or.jp",
-    description="Vprimer",
+    description="Indelvcf",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/ncod3/indelvcf",
