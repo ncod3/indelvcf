@@ -31,6 +31,12 @@ $ pip uninstall indelvcf
 ## Getting Started
 
 ~~~
+Get the sample data.
+
+$ cd (your working directory)
+$ git clone https://github.com/ncod3/data_vprimer
+$ mv data_vprimer/ini* .
+
 $ indelvcf -c ini_indelvcf_yam_small5.ini -t 10
 ~~~
 
