@@ -21,6 +21,8 @@ $
 
 ## Getting Started
 
+$ indelvcf -c ini_yam_for_exam_small5.ini -t 10
+
 ~~~
 $ 
 ~~~
