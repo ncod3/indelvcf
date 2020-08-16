@@ -1,0 +1,6 @@
+data/small_bams/DRS_015.pp.bam
+data/small_bams/DRS_061.pp.bam
+data/small_bams/DRS_068.pp.bam
+data/small_bams/DRS_084.pp.bam
+data/small_bams/DRS_098.pp.bam
+data/small_bams/DRS_253.pp.bam

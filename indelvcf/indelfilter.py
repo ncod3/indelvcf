@@ -37,11 +37,11 @@ class IndelFilter(object):
                 glv.conf.region_bed_list):
 
             out_file1 = "{}/{}_{}.{}{}".format(
-                out_dir, mod_name, region, 1, '.vcf.gz')
+                out_dir, mod_name, region, 'annote', '.vcf.gz')
             out_file2 = "{}/{}_{}.{}{}".format(
-                out_dir, mod_name, region, 2, '.vcf.gz')
+                out_dir, mod_name, region, 'norm', '.vcf.gz')
             out_file3 = "{}/{}_{}.{}{}".format(
-                out_dir, mod_name, region, 3, '.vcf.gz')
+                out_dir, mod_name, region, 'homo', '.vcf.gz')
 
             if heterozygosity == 'homo':
                 glv.outlist.outfile[mod_name].append(out_file3)

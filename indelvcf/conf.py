@@ -353,6 +353,8 @@ class Conf(object):
 
     def _read_bams(self):
 
+        bam_list = list()
+
         # set to self.bam_list
         if self.bams != '':
             bams_line = self.bams
@@ -361,7 +363,7 @@ class Conf(object):
             bams_line = re.sub(r"\s+", ",", bams_line)
             bams_line = re.sub(r",+", ",", bams_line)
 
-            self.bam_list = bams_line.split(',')
+            bam_list = bams_line.split(',')
 
         else:
             bams_txt = self.bams_txt
@@ -375,9 +377,17 @@ class Conf(object):
                     r_line = utl.strip_hash_comment(r_line)
                     if r_line == '':
                         continue
-                    self.bam_list.append(r_line)
+                    bam_list.append(r_line)
 
-        #log.debug("{}".format(self.bam_list))
+        for bam in bam_list:
+            if bam.startswith('/'):
+                self.bam_list.append(bam)
+            else:
+                abs_bam = "{}/{}".format(self.cwd, bam)
+                self.bam_list.append(abs_bam)
+
+        log.info("{}".format(self.bam_list))
+
 
     def _set_default(self, sect, key, value):
 
