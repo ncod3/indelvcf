@@ -40,6 +40,18 @@ class Svaba(object):
 
             title = "{}/indel_{}".format(out_dir, region)
 
+            if len(glv.conf.svaba_normalize_bams_list) != 0:
+                norm = " -n ".join(glv.conf.svaba_normalize_bams_list)
+                norm = "-n " + norm
+                glv.outlist.outfile[mod_name].append(
+                    "{}.{}{}".format(title, 'svaba.indel.vcf', '.gz'))
+            else:
+                glv.outlist.outfile[mod_name].append(
+                    "{}.{}{}".format(title, 'svaba.indel.vcf', '.gz'))
+
+            # normalize option
+            norm = ''
+            log.debug("{}".format(norm))
 
             if utl.progress_check(mod_name) == False:
                 log.info("progress={} so skip {}.".format(
@@ -49,13 +61,6 @@ class Svaba(object):
 
             log.info("go on {}".format(mod_name))
 
-            # normalize option
-            norm = ''
-            if len(glv.conf.svaba_normalize_bams_list) != 0:
-                norm = " -n ".join(glv.conf.svaba_normalize_bams_list)
-                norm = "-n " + norm
-
-            log.debug("{}".format(norm))
 
             svaba = '{} {} -t {} -G {} -k {} {} -p {} {} -a {}'
             cmd1 = svaba.format(
@@ -87,12 +92,6 @@ class Svaba(object):
                 utl.try_exec(cmd2)
                 utl.tabix("{}{}".format(t_vcf, '.gz'))
 
-            if norm == '':
-                glv.outlist.outfile[mod_name].append(
-                    "{}.{}{}".format(title, 'svaba.indel.vcf', '.gz'))
-            else:
-                glv.outlist.outfile[mod_name].append(
-                    "{}.{}{}".format(title, 'svaba.indel.vcf', '.gz'))
         
         os.chdir(glv.conf.cwd)
 
